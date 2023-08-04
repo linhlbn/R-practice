@@ -1,0 +1,534 @@
+
+R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin20 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.79 (8238) x86_64-apple-darwin20]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+> install.packages("dslabs")
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies 'colorspace', 'utf8', 'farver', 'labeling', 'munsell', 'R6', 'RColorBrewer', 'viridisLite', 'fansi', 'magrittr', 'pillar', 'pkgconfig', 'cli', 'glue', 'gtable', 'isoband', 'lifecycle', 'rlang', 'scales', 'tibble', 'vctrs', 'withr', 'ggplot2'
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/colorspace_2.1-0.tgz'
+Content type 'application/octet-stream' length 2643612 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/utf8_1.2.3.tgz'
+Content type 'application/octet-stream' length 210111 bytes (205 KB)
+==================================================
+downloaded 205 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/farver_2.1.1.tgz'
+Content type 'application/octet-stream' length 1988931 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/labeling_0.4.2.tgz'
+Content type 'application/octet-stream' length 61261 bytes (59 KB)
+==================================================
+downloaded 59 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/munsell_0.5.0.tgz'
+Content type 'application/octet-stream' length 243416 bytes (237 KB)
+==================================================
+downloaded 237 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/R6_2.5.1.tgz'
+Content type 'application/octet-stream' length 83053 bytes (81 KB)
+==================================================
+downloaded 81 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/RColorBrewer_1.1-3.tgz'
+Content type 'application/octet-stream' length 53095 bytes (51 KB)
+==================================================
+downloaded 51 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/viridisLite_0.4.2.tgz'
+Content type 'application/octet-stream' length 1297460 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/fansi_1.0.4.tgz'
+Content type 'application/octet-stream' length 387747 bytes (378 KB)
+==================================================
+downloaded 378 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/magrittr_2.0.3.tgz'
+Content type 'application/octet-stream' length 232365 bytes (226 KB)
+==================================================
+downloaded 226 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/pillar_1.9.0.tgz'
+Content type 'application/octet-stream' length 648665 bytes (633 KB)
+==================================================
+downloaded 633 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/pkgconfig_2.0.3.tgz'
+Content type 'application/octet-stream' length 18182 bytes (17 KB)
+==================================================
+downloaded 17 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/cli_3.6.1.tgz'
+Content type 'application/octet-stream' length 1377962 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/glue_1.6.2.tgz'
+Content type 'application/octet-stream' length 156737 bytes (153 KB)
+==================================================
+downloaded 153 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/gtable_0.3.3.tgz'
+Content type 'application/octet-stream' length 217980 bytes (212 KB)
+==================================================
+downloaded 212 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/isoband_0.2.7.tgz'
+Content type 'application/octet-stream' length 1875469 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/lifecycle_1.0.3.tgz'
+Content type 'application/octet-stream' length 123599 bytes (120 KB)
+==================================================
+downloaded 120 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/rlang_1.1.1.tgz'
+Content type 'application/octet-stream' length 1889282 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/scales_1.2.1.tgz'
+Content type 'application/octet-stream' length 615923 bytes (601 KB)
+==================================================
+downloaded 601 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/tibble_3.2.1.tgz'
+Content type 'application/octet-stream' length 682281 bytes (666 KB)
+==================================================
+downloaded 666 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/vctrs_0.6.3.tgz'
+Content type 'application/octet-stream' length 1971082 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/withr_2.5.0.tgz'
+Content type 'application/octet-stream' length 230909 bytes (225 KB)
+==================================================
+downloaded 225 KB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/ggplot2_3.4.2.tgz'
+Content type 'application/octet-stream' length 4304248 bytes (4.1 MB)
+==================================================
+downloaded 4.1 MB
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/macosx/big-sur-x86_64/contrib/4.3/dslabs_0.7.6.tgz'
+Content type 'application/octet-stream' length 4715483 bytes (4.5 MB)
+==================================================
+downloaded 4.5 MB
+
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+tar: Failed to set default locale
+
+The downloaded binary packages are in
+	/var/folders/4r/gr0rc9mx12g49lm8xgyyb_n00000gn/T//Rtmp3hbeob/downloaded_packages
+> 
+> library(dslabs)
+> 
+> data(movielens)
+> dim(moveelens)
+Error: object 'moveelens' not found
+> dim(movielens)
+[1] 100004      7
+> What is the variable type of title ?
+Error: unexpected symbol in "What is"
+> 
+> It is a text (txt) variable
+Error: unexpected symbol in "It is"
+> 
+> It is a chronological (chr) variable
+Error: unexpected symbol in "It is"
+> 
+> It is a string (str) variable
+Error: unexpected symbol in "It is"
+> 
+> It is a numeric (num) variable
+Error: unexpected symbol in "It is"
+> 
+> It is an integer (int) variable
+Error: unexpected symbol in "It is"
+> 
+> It is a factor (Factor) variable
+Error: unexpected symbol in "It is"
+> 
+> It is a character (chr) variable
+Error: unexpected symbol in "It is"
+> 
+> class(movielens$title)
+[1] "character"
+> class(movielens$genres)
+[1] "factor"
+> nlevels(movielens $genres)
+[1] 901
+> library(dslabs)
+> data(heights)
+> options(digits = 3)    
+> # Calculate the average height
+> average_height <- mean(heights$height)
+> 
+> # Create a logical vector for individuals above average height
+> ind <- heights$height > average_height
+> 
+> # Count the number of individuals above average height
+> num_above_average <- sum(ind)
+> num_above_average
+[1] 532
+> 
+> # Calculate the average height
+> average_height <- mean(heights$height)
+> 
+> # Create a logical vector for individuals above average height and are female
+> ind <- (heights$height > average_height) & (heights$sex == "Female")
+> 
+> # Count the number of individuals above average height and are female
+> num_above_average_female <- sum(ind)
+> num_above_average_female
+[1] 31
+> 
+> # Create a logical vector for individuals who are female
+> ind <- (heights$sex == "Female")
+> 
+> # Calculate the proportion of individuals who are female
+> female_proportion <- mean(ind)
+> female_proportion
+[1] 0.227
+> 
+> min_height <- min(heights$height)
+> min_height
+[1] 50
+> 
+> min_height_index <- match(min_height, heights$height)
+> min_height_index
+[1] 1032
+> 
+> min_height_sex <- heights$sex[min_height_index]
+> min_height_sex
+[1] Male
+Levels: Female Male
+> 
+> max_height <- max(heights$height)
+> max_height
+[1] 82.7
+> 
+> min_height <- floor(min(heights$height))  # Floor rounds down to nearest integer
+> max_height <- ceiling(max(heights$height)) # Ceiling rounds up to nearest integer
+> 
+> x <- min_height:max_height
+> x
+ [1] 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83
+> 
+> # Let's assume that the 'height' column of the dataset is stored in a vector named `heights_vector`
+> not_in_dataset <- !x %in% heights_vector
+Error: object 'heights_vector' not found
+> num_not_in_dataset <- sum(not_in_dataset)
+Error: object 'not_in_dataset' not found
+> num_not_in_dataset
+Error: object 'num_not_in_dataset' not found
+> 
+> 
+> # Let's assume that the 'height' column of the dataset is stored in a vector named `heights_vector`
+> not_in_dataset <- !x %in% heights_vector
+Error: object 'heights_vector' not found
+> num_not_in_dataset <- sum(not_in_dataset)
+Error: object 'not_in_dataset' not found
+> num_not_in_dataset
+Error: object 'num_not_in_dataset' not found
+> 
+> not_in_dataset <- !x %in% heights$height
+> num_not_in_dataset <- sum(not_in_dataset)
+> num_not_in_dataset
+[1] 4
+> 
+> # Load the dataset
+> library(dslabs)
+> data(heights)
+> 
+> # Convert inches to centimeters and add the new column to the dataframe
+> heights$ht_cm <- heights$height * 2.54
+> 
+> # Save the new dataset as heights2
+> heights2 <- heights
+> 
+> # Print the height in centimeters of the 18th individual
+> heights2$ht_cm[18]
+[1] 163
+> 
+> # Calculate the mean height in centimeters
+> mean_height_cm <- mean(heights2$ht_cm)
+> 
+> # Print the mean height in centimeters
+> mean_height_cm
+[1] 174
+> 
+> # Load dplyr package
+> library(dplyr)
+Error in library(dplyr) : there is no package called 'dplyr'
+> 
+> # Create a new data frame with only females
+> females <- filter(heights2, sex == "Female")
+Error: object 'sex' not found
+> 
+> # Count the number of females in the new data frame
+> num_females <- nrow(females)
+Error: object 'females' not found
+> num_females
+Error: object 'num_females' not found
+> 
+> # Load dplyr package
+> library(dplyr)
+Error in library(dplyr) : there is no package called 'dplyr'
+> 
+> # Create a new data frame with only females
+> females <- filter(heights2, sex == "Female")
+Error: object 'sex' not found
+> 
+> # Count the number of females in the new data frame
+> num_females <- nrow(females)
+Error: object 'females' not found
+> num_females
+Error: object 'num_females' not found
+> 
+> # Make sure you have the correct data loaded and that it has a "sex" column
+> head(heights2)
+     sex height ht_cm
+1   Male     75   190
+2   Male     70   178
+3   Male     68   173
+4   Male     74   188
+5   Male     61   155
+6 Female     65   165
+> 
+> # Create the 'females' data frame
+> females <- heights2[heights2$sex == "Female", ]
+> 
+> # Count the number of females
+> num_females <- nrow(females)
+> num_females
+[1] 238
+> 
+> mean_height_females <- mean(females$ht_cm, na.rm = TRUE)
+> mean_height_females
+[1] 165
+> 
+> library(dslabs)
+> data(olive)
+> head(olive)
+          region         area palmitic palmitoleic stearic oleic linoleic linolenic arachidic eicosenoic
+1 Southern Italy North-Apulia    10.75        0.75    2.26  78.2     6.72      0.36      0.60       0.29
+2 Southern Italy North-Apulia    10.88        0.73    2.24  77.1     7.81      0.31      0.61       0.29
+3 Southern Italy North-Apulia     9.11        0.54    2.46  81.1     5.49      0.31      0.63       0.29
+4 Southern Italy North-Apulia     9.66        0.57    2.40  79.5     6.19      0.50      0.78       0.35
+5 Southern Italy North-Apulia    10.51        0.67    2.59  77.7     6.72      0.50      0.80       0.46
+6 Southern Italy North-Apulia     9.11        0.49    2.68  79.2     6.78      0.51      0.70       0.44
+> 
+> plot(olive$palmitic, olive$palmitoleic, xlab = "Percentage of Palmitic Acid", ylab = "Percentage of Palmitoleic Acid", main = "Scatterplot of Palmitic vs Palmitoleic Acid")
+> 
+> hist(olive$eicosenoic, main = "Histogram of Eicosenoic Acid Percentage", xlab = "Percentage of Eicosenoic Acid")
+> 
+> boxplot(olive$palmitic ~ olive$region, main = "Boxplot of Palmitic Acid Percentage by Region", xlab = "Region", ylab = "Palmitic Acid Percentage")
+> 
+> # Create a logical vector indicating which elements of x are not in heights_vector
+> not_in_dataset <- !x %in% heights_vector
+Error: object 'heights_vector' not found
+> 
+> # Sum the TRUE values in not_in_dataset to find the total number of heights not present
+> num_not_in_dataset <- sum(not_in_dataset)
+> 
+> # Print the result
+> num_not_in_dataset
+[1] 4
+> 
+> name <- c("Mandi", "Amy", "Nicole", "Olivia")
+> distance <- c(0.8, 3.1, 2.8, 4.0)
+> time <- c(10, 30, 40, 50)
+> 
+> # Convert time to hours
+> time_in_hours <- time / 60
+> 
+> # Calculate speed in miles per hour
+> speed <- distance / time_in_hours
+> 
+> # Find the index corresponding to Olivia's name
+> olivia_index <- which(name == "Olivia")
+> 
+> # Find how many hours Olivia ran
+> hours_olivia_ran <- time_in_hours[olivia_index]
+> 
+> hour_olivia_ran
+Error: object 'hour_olivia_ran' not found
+> hours_olivia_ran
+[1] 0.833
+> name <- c("Mandi", "Amy", "Nicole", "Olivia")
+> distance <- c(0.8, 3.1, 2.8, 4.0)
+> time <- c(10, 30, 40, 50)
+> 
+> # Convert time to hours
+> time_in_hours <- time / 60
+> 
+> # Calculate speed in miles per hour for each runner
+> speed <- distance / time_in_hours
+> 
+> # Find the index corresponding to Mandi's name
+> mandi_index <- which(name == "Mandi")
+> 
+> # Find Mandi's speed
+> mandi_speed <- speed[mandi_index]
+> 
+> mandi_speed
+[1] 4.8
+> name <- c("Mandi", "Amy", "Nicole", "Olivia")
+> distance <- c(0.8, 3.1, 2.8, 4.0)
+> time <- c(10, 30, 40, 50)
+> 
+> # Convert time to hours
+> time_in_hours <- time / 60
+> 
+> # Calculate speed in miles per hour for each runner
+> speed <- distance / time_in_hours
+> 
+> # Find the index of the runner with the fastest speed
+> fastest_runner_index <- which.max(speed)
+> 
+> # Find the name of the runner with the fastest speed
+> fastest_runner_name <- name[fastest_runner_index]
+> 
+> fastest_runner_name
+[1] "Amy"
+2023-08-05 01:32:03.448 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 01:32:03.525 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 01:32:18.499 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 01:32:18.567 R[87918:6068608] +[CATransaction synchronize] called within transaction
+> # Assuming the "sex" column is a character vector in the heights dataset
+> sex_vector <- heights$sex
+> 
+> # Create a new vector using ifelse()
+> result_vector <- ifelse(sex_vector == "Female", 1, ifelse(sex_vector == "Male", 2, NA))
+> 
+> # Find the sum of the resulting vector
+> sum_result <- sum(result_vector, na.rm = TRUE)
+> 
+> sum_result
+[1] 1862
+> # Assuming the "height" column exists in the heights dataset
+> height_vector <- heights$height
+> 
+> # Create a new vector using ifelse()
+> result_vector <- ifelse(height_vector > 72, height_vector, 0)
+> 
+> # Find the mean of the resulting vector
+> mean_result <- mean(result_vector)
+> 
+> mean_result
+[1] 9.65
+> inches_to_ft <- function(x) {
++   feet <- x / 12
++   return(feet)
++ }
+> 
+> inches_to_ft(144)
+[1] 12
+> 
+> # Assuming the "height" column exists in the heights dataset
+> height_vector <- heights$height
+> 
+> # Convert 5 feet to inches
+> five_feet_in_inches <- 5 * 12
+> 
+> # Count the number of individuals with height less than 5 feet
+> num_individuals_less_than_5ft <- sum(height_vector < five_feet_in_inches)
+> 
+> num_individuals_less_than_5ft
+[1] 20
+> # define a vector of length m
+> m <- 10
+> f_n <- vector(length = m)
+> 
+> # make a vector of factorials
+> _________{
+Error: unexpected input in "__"
+> f_n[n] <- factorial(n)
+Error: object 'n' not found
+> }
+Error: unexpected '}' in "}"
+> 
+> # inspect f_n
+> f_n
+ [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+> 
+> # define a vector of length m
+> m <- 10
+> f_n <- vector(length = m)
+> 
+> # make a vector of factorials
+> for (n in 1:m) {
++   f_n[n] <- factorial(n)
++ }
+> 
+> # inspect f_n
+> f_n
+ [1]       1       2       6      24     120     720    5040   40320  362880 3628800
+> 
+2023-08-05 02:39:49.326 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:39:49.693 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:40:05.264 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:40:05.292 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:40:05.321 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:40:05.422 R[87918:6068608] +[CATransaction synchronize] called within transaction
+2023-08-05 02:40:05.514 R[87918:6068608] +[CATransaction synchronize] called within transaction
+> 3339909
